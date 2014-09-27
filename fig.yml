@@ -28,10 +28,13 @@ master:
 
 slave:
   image: redjack/mesos-slave
+  ports:
+    - "5051:5051"
   links:
     - "zk:zookeeper"
   environment:
     MESOS_MASTER: zk://zookeeper:2181/mesos
+    MESOS_HOSTNAME: localdocker
 
 #
 # Marathon
