@@ -12,11 +12,12 @@ To stream log output, simply run:
 fig logs
 ```
 
-Great! Now let's pop open the Mesos & Marathon UI's like so:
+Great! Now let's pop open the Mesos, Marathon, & Chronos' UI like so:
 
 ```
 open http://localdocker:5050/ # open Mesos UI
 open http://localdocker:8080/ # open Marathon UI
+open http://localdocker:8081/ # Open Chronos UI
 ```
 
 You can adjust the amount of slaves in your Mesos cluster like so:
