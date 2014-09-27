@@ -1,10 +1,8 @@
 Run Mesos in Docker with Fig!
 
-Assuming you've already [installed Fig](http://www.fig.sh/install.html), then running the following will boot up Mesos locally inside of Docker! This guide assumes OSX but can be easily adapted for other platforms. Contribut
+Assuming you've already [installed Fig](http://www.fig.sh/install.html), then running the following will boot up Mesos locally inside of Docker! Contribs welcome :)
 
 ```
-git clone git@github.com:breerly/fig-mesos.git && cd fig-mesos
-docker-osx shell
 fig up
 ```
 
