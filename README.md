@@ -1,4 +1,4 @@
-Run Mesos in Docker with Fig!
+#### Run Mesos in Docker with Fig!
 
 Assuming you've already [installed Fig](http://www.fig.sh/install.html), then checkout and run:
 
@@ -58,6 +58,6 @@ curl -X POST -H "Accept: application/json" -H "Content-Type: application/json" \
 }'
 ```
 
-Great. Fin
+Great.
 
 Cheers!
