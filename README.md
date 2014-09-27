@@ -43,31 +43,21 @@ And now for a Docker container:
 curl -X POST -H "Accept: application/json" -H "Content-Type: application/json" \
   localdocker:8080/v2/apps -d '
 {
-  "container": {
-    "type": "DOCKER",
-    "docker": {
-      "image": "libmesos/ubuntu"
+    "container": {
+        "type": "DOCKER",
+        "docker": {
+            "image": "libmesos/ubuntu"
+        }
     },
-    "volumes" : [
-      {
-        "containerPath": "/etc/a",
-        "hostPath": "/var/data/a",
-        "mode": "RO"
-      },
-      {
-        "containerPath": "/etc/b",
-        "hostPath": "/var/data/b",
-        "mode": "RW"
-      }
-    ]
-  },
-  "id": "ubuntu",
-  "instances": "1",
-  "cpus": "0.1",
-  "mem": "32",
-  "uris": [],
-  "cmd": "while sleep 10; do date -u +%T; done"
+    "id": "hello2",
+    "instances": "1",
+    "cpus": "0.1",
+    "mem": "32",
+    "uris": [],
+    "cmd": "while sleep 10; do date -u +%T; done"
 }'
 ```
+
+Great. Fin
 
 Cheers!
