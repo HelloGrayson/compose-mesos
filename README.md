@@ -52,7 +52,7 @@ curl -X POST -H "Accept: application/json" -H "Content-Type: application/json" \
             "image": "libmesos/ubuntu"
         }
     },
-    "id": "hellocontainer",
+    "id": "hellofromcontainer",
     "instances": "1",
     "cpus": "0.1",
     "mem": "32",
