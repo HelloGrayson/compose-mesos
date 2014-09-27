@@ -1,6 +1,4 @@
-![Fig Mesos](/../images/fig-mesos.jpg?raw=true "Fig Mesos")
-
-#### Run Mesos in Docker with Fig!
+# ![Run Mesos in Docker with Fig!](/../images/fig-mesos.jpg?raw=true "Fig Mesos")
 
 Assuming you've already [installed Fig](http://www.fig.sh/install.html), then checkout and run:
 
