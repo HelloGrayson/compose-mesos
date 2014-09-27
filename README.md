@@ -60,6 +60,10 @@ curl -X POST -H "Accept: application/json" -H "Content-Type: application/json" \
 }'
 ```
 
-Great.
+Much thanks to the following sources:
+
+* [An Introduction to Mesosphere](https://www.digitalocean.com/community/tutorials/an-introduction-to-mesosphere)
+* [How To Configure a Production-Ready Mesosphere Cluster](https://www.digitalocean.com/community/tutorials/how-to-configure-a-production-ready-mesosphere-cluster-on-ubuntu-14-04)
+* [Marathon v0.7.0 — Running Dockers at Scale and More](https://mesosphere.com/2014/09/25/marathon-0.7.0-released/)
 
 Cheers!
