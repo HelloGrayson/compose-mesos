@@ -26,7 +26,7 @@ fig scale slave=10
 fig scale slave=1
 ```
 
-Let's launch a simple app like so:
+Let's launch a simple app through [Marathon's REST API](https://mesosphere.github.io/marathon/docs/rest-api.html) like so:
 
 ```
 curl -X POST -H "Accept: application/json" -H "Content-Type: application/json" \
