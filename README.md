@@ -1,4 +1,4 @@
-![Fig Mesos](/../<images>/fig-mesos.jpg?raw=true "Fig Mesos")
+![Fig Mesos](/../images/fig-mesos.jpg?raw=true "Fig Mesos")
 
 #### Run Mesos in Docker with Fig!
 
