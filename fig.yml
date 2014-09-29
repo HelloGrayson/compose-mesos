@@ -87,11 +87,11 @@ marathon:
 #
 # https://registry.hub.docker.com/u/tomaskral/chronos/
 #
-# chronos:
-#   image: tomaskral/chronos
-#   ports:
-#     - "8081:8081"
-#   links:
-#     - "zk:zookeeper"
-#   command: "--master zk://zookeeper:2181/mesos --zk_hosts zk://zookeeper:2181/mesos --http_port 8081"
+chronos:
+  image: tomaskral/chronos
+  ports:
+    - "8081:8081"
+  links:
+    - "zk:zookeeper"
+  command: "--master zk://zookeeper:2181/mesos --zk_hosts zk://zookeeper:2181/mesos --http_port 8081"
 
