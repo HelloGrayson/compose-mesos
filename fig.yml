@@ -5,8 +5,6 @@
 #
 zk:
   image: jplock/zookeeper:3.4.6
-  ports:
-    - "2181:2181"
 
 #
 # Mesos
@@ -15,26 +13,60 @@ zk:
 # http://mesos.apache.org/documentation/latest/configuration/
 #
 master:
-  image: redjack/mesos-master
+  image: breerly/mesos
+  command: mesos-master
   ports:
     - "5050:5050"
   links:
-    - "zk:zookeeper"
+   - "zk:zookeeper"
   environment:
+    MESOS_CLUSTER: breerly/fig-mesos
+    MESOS_HOSTNAME: localdocker
     MESOS_WORK_DIR: /var/lib/mesos
     MESOS_LOG_DIR: /var/log
     MESOS_QUORUM: 1
     MESOS_ZK: zk://zookeeper:2181/mesos
 
-slave:
-  image: redjack/mesos-slave
-  ports:
-    - "5051:5051"
+slave1:
+  image: breerly/mesos
+  command: supervisord -n
+  privileged: true
   links:
     - "zk:zookeeper"
+  ports:
+    - "5051:5051"
   environment:
-    MESOS_MASTER: zk://zookeeper:2181/mesos
+    MESOS_CONTAINERIZERS: "docker,mesos"
     MESOS_HOSTNAME: localdocker
+    MESOS_MASTER: zk://zookeeper:2181/mesos
+
+slave2:
+  image: breerly/mesos
+  command: supervisord -n
+  privileged: true
+  links:
+    - "zk:zookeeper"
+  ports:
+    - "5052:5052"
+  environment:
+    MESOS_CONTAINERIZERS: "docker,mesos"
+    MESOS_HOSTNAME: localdocker
+    MESOS_MASTER: zk://zookeeper:2181/mesos
+    MESOS_PORT: "5052"
+
+slave3:
+  image: breerly/mesos
+  command: supervisord -n
+  privileged: true
+  links:
+    - "zk:zookeeper"
+  ports:
+    - "5053:5053"
+  environment:
+    MESOS_CONTAINERIZERS: "docker,mesos"
+    MESOS_HOSTNAME: localdocker
+    MESOS_MASTER: zk://zookeeper:2181/mesos
+    MESOS_PORT: "5053"
 
 #
 # Marathon
@@ -43,7 +75,7 @@ slave:
 # https://mesosphere.github.io/marathon/docs/command-line-flags.html
 #
 marathon:
-  image: thefactory/marathon
+  image: superguenter/marathon
   ports:
     - "8080:8080"
   links:
