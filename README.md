@@ -51,7 +51,7 @@ curl -X POST -H "Accept: application/json" -H "Content-Type: application/json" \
     "cpus": 0.2,
     "mem": 32.0,
     "instances": 1
-}''
+}'
 ```
 
 Much thanks to the following sources:
