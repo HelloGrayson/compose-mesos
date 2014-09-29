@@ -20,13 +20,6 @@ open http://localdocker:8080/ # open Marathon UI
 open http://localdocker:8081/ # Open Chronos UI
 ```
 
-You can adjust the amount of slaves in your Mesos cluster like so:
-
-```
-fig scale slave=10
-fig scale slave=1
-```
-
 Let's launch a simple app through [Marathon's REST API](https://mesosphere.github.io/marathon/docs/rest-api.html) like so:
 
 ```
@@ -46,19 +39,19 @@ And now for a Docker container:
 curl -X POST -H "Accept: application/json" -H "Content-Type: application/json" \
   localdocker:8080/v2/apps -d '
 {
+    "id": "inky",
     "container": {
-        "type": "DOCKER",
         "docker": {
-            "image": "libmesos/ubuntu"
-        }
+            "image": "mesosphere/inky"
+        },
+        "type": "DOCKER",
+        "volumes": []
     },
-    "id": "hellofromcontainer",
-    "instances": "1",
-    "cpus": "0.1",
-    "mem": "32",
-    "uris": [],
-    "cmd": "while sleep 10; do date -u +%T; done"
-}'
+    "args": ["hello"],
+    "cpus": 0.2,
+    "mem": 32.0,
+    "instances": 1
+}''
 ```
 
 Much thanks to the following sources:
