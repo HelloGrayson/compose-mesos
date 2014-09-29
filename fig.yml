@@ -36,8 +36,7 @@ slave1:
   ports:
     - "5051:5051"
   environment:
-    MESOS_CONTAINERIZERS: "docker"
-    MESOS_ISOLATION: "cgroups"
+    MESOS_CONTAINERIZERS: "docker,mesos"
     MESOS_HOSTNAME: localdocker
     MESOS_MASTER: zk://zookeeper:2181/mesos
 
@@ -50,8 +49,7 @@ slave2:
   ports:
     - "5052:5052"
   environment:
-    MESOS_CONTAINERIZERS: "docker" # why no add mesos HERE!!!
-    MESOS_ISOLATION: "cgroups"
+    MESOS_CONTAINERIZERS: "docker,mesos"
     MESOS_HOSTNAME: localdocker
     MESOS_MASTER: zk://zookeeper:2181/mesos
     MESOS_PORT: "5052"
@@ -65,7 +63,7 @@ slave3:
   ports:
     - "5053:5053"
   environment:
-    MESOS_CONTAINERIZERS: "docker"
+    MESOS_CONTAINERIZERS: "docker,mesos"
     MESOS_HOSTNAME: localdocker
     MESOS_MASTER: zk://zookeeper:2181/mesos
     MESOS_PORT: "5053"
