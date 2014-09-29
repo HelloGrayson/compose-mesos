@@ -4,7 +4,7 @@
 # https://registry.hub.docker.com/u/jplock/zookeeper/
 #
 zk:
-  image: jplock/zookeeper
+  image: jplock/zookeeper:3.4.6
   ports:
     - "2181:2181"
 
