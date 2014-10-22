@@ -90,8 +90,8 @@ marathon:
 chronos:
   image: tomaskral/chronos
   ports:
-    - "8081:8081"
+    - "4400:4400"
   links:
     - "zk:zookeeper"
-  command: "--master zk://zookeeper:2181/mesos --zk_hosts zk://zookeeper:2181/mesos --http_port 8081"
+  command: "--master zk://zookeeper:2181/mesos --zk_hosts zk://zookeeper:2181/mesos"
 
