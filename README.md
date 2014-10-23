@@ -17,7 +17,7 @@ Great! Now let's pop open the Mesos, Marathon, & Chronos' UI like so:
 ```
 open http://localdocker:5050/ # open Mesos UI
 open http://localdocker:8080/ # open Marathon UI
-open http://localdocker:8081/ # Open Chronos UI
+open http://localdocker:4400/ # Open Chronos UI
 ```
 
 Let's launch a simple app through [Marathon's REST API](https://mesosphere.github.io/marathon/docs/rest-api.html) like so:
