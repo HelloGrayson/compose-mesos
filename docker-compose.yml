@@ -74,24 +74,41 @@ slave3:
 # https://registry.hub.docker.com/u/thefactory/marathon/
 # https://mesosphere.github.io/marathon/docs/command-line-flags.html
 #
-marathon:
-  image: superguenter/marathon
-  ports:
-    - "8080:8080"
-  links:
-    - "zk:zookeeper"
-  command: "--master zk://zookeeper:2181/mesos --zk zk://zookeeper:2181/marathon"
+#marathon:
+  #image: superguenter/marathon
+  #ports:
+    #- "8080:8080"
+  #links:
+    #- "zk:zookeeper"
+#  command: "--master zk://zookeeper:2181/mesos --zk zk://zookeeper:2181/marathon"
 
 #
 # Chronos
 #
 # https://registry.hub.docker.com/u/tomaskral/chronos/
 #
-chronos:
-  image: tomaskral/chronos
-  ports:
-    - "4400:8080"
+#chronos:
+  #image: tomaskral/chronos
+  #ports:
+    #- "4400:8080"
+  #links:
+    #- "zk:zookeeper"
+#  command: "--master zk://zookeeper:2181/mesos --zk_hosts zk://zookeeper:2181/mesos"
+
+
+aurora:
+  image: medallia/aurora-scheduler
   links:
     - "zk:zookeeper"
-  command: "--master zk://zookeeper:2181/mesos --zk_hosts zk://zookeeper:2181/mesos"
+  command: "--name=aurora-scheduler-1"
+  environment:
+    CLUSTER: devcluster
+    ZK: zookeeper:2181
+    MESOS_ZK: zk://zookeeper:2181/mesos
+    NATIVE_LOG_QUORUM_SIZE: 1
+    AURORA_DATA: /opt/aurora
+    EXECUTOR_RESOURCES: file:///foo/bar/zaa
+  ports:
+    - "8081:8081"
+    - "8083:8083"
 
