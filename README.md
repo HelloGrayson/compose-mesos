@@ -1,15 +1,15 @@
-#### Run Mesos in Docker with Fig!
+#### Run Mesos in Docker with Docker Compose!
 
-Assuming you've already [installed Fig](http://www.fig.sh/install.html), then checkout and run:
+Assuming you've already [installed Docker Toolbox](https://www.docker.com/docker-toolbox), then checkout and run:
 
 ```
-fig up -d
+docker-compose up -d
 ```
 
 To stream log output, simply run:
 
 ```
-fig logs
+docker-compose logs
 ```
 
 Great! Now let's pop open the Mesos, Marathon, & Chronos' UI like so:
